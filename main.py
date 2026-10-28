@@ -44,9 +44,9 @@ def main():
 
     again = input("Waht to Play Again (y/n):")
     if again != "y":
-        main()
-    else:
         print("Thanks for Playing")
+    else:
+        main()
 
 
 
