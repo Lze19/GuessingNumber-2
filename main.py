@@ -12,7 +12,7 @@ def valid_guess():
             else:
                 return number
         except ValueError:
-            print("Input an Number Only Please!")
+            print("Input a Number Only Please!")
 
 def play(scrt_number, user_guess):
         if user_guess > scrt_number:
@@ -26,7 +26,7 @@ def play(scrt_number, user_guess):
 def main():
     secret_number = rd.randint(-1000,1000)
     print("Guess a number between -1000 and 1000")
-    max_guess = math.log2(2001)
+    max_guess = math.ceil(math.log2(2001))
     count = 0
     while count < max_guess:
         guess = valid_guess()
@@ -37,12 +37,12 @@ def main():
             print(f"You Guessed it in {count} times.")
             break
         else:
-            print(f"Attemps Left: {max_guess-count:.0f}")
+            print(f"Attempts Left: {max_guess-count:.0f}")
     else:
         print(f"You lost, You guessed {count} times.")
         print(f"The Secret Number is {secret_number}")
 
-    again = input("Waht to Play Again (y/n):")
+    again = input("Want to Play Again (y/n):")
     if again != "y":
         print("Thanks for Playing")
     else:
